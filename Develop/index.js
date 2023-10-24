@@ -32,13 +32,15 @@ const questions = [
     },
     {
         type: 'input',
-        message: 'What command should be run to install dependencies? (npm i)',
+        message: 'What command should be run to install dependencies?',
         name: 'command',
+        default: 'npm i',
     },
     {
         type: 'input',
-        message: 'What should br run to run tests? (npm test)',
+        message: 'What should br run to run tests?',
         name: 'test',
+        default: 'npm test',
     },
     {
         type: 'input',
@@ -56,17 +58,24 @@ const questions = [
 const readMe = ({username, email,projectName, description, license,command,test,repo,contributing}) => {
     return `
 # ${projectName}
+![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
 
 
 ## Description
-
 ${description}
 
 ## Table of content
+* [Installation](#installation)
 
+* [Usage](#usage)
 
+* [License](#license)
 
+* [Contributing](#contributing)
 
+* [Tests](#tests)
+
+* [Questions](#questions)
 
 ## Installation
 to install necessary dependencies, run the following command:
@@ -77,17 +86,18 @@ ${command}
 ${repo}
 
 ## License 
-This porject is licensed under the ${license} license.
+This project is licensed under the ${license} license.
 
 ## Contributing 
 ${contributing}
 
 ## Tests 
 To run tests, run the following command:
+
 ${test}
 
 ## Questions
-If you have any questions about the repo, open an issue or contact me directly at ${email}. You can find more of my work at ${username}
+If you have any questions about the repo, open an issue or contact me directly at ${email}. You can find more of my work at [${username}](https://github.com/${username})
 `
 }
 
